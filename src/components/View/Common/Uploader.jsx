@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
 import { Row } from "react-bootstrap";
+import Swal from "sweetalert2";
 const { Dragger } = Upload;
 
 const Uploader = () => {
@@ -13,9 +14,15 @@ const Uploader = () => {
     action: "https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload",
     fileList,
     beforeUpload(file) {
-      const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
+      const isJpgOrPng = file.type === "image/jpg" || file.type === "image/png";
       if (!isJpgOrPng) {
-        message.error("Solo se permiten archivos JPG o PNG.");
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "Solo se permiten archivos JPG o PNG.",
+          showConfirmButton: false,
+          timer: 1000,
+        });
         return Upload.LIST_IGNORE;
       }
       return true;
@@ -28,9 +35,23 @@ const Uploader = () => {
       const { status } = info.file;
 
       if (status === "done") {
-        message.success(`${info.file.name} subido correctamente.`);
-      } else if (status === "error") {
-        message.error(`${info.file.name} fallo al subir.`);
+        Swal.fire({
+          icon: "success",
+          title: "Exito!",
+          text: `${info.file.name} subido correctamente.`,
+          showConfirmButton: false,
+          timer: 1000,
+        });
+        //message.success(`${info.file.name} subido correctamente.`);
+      }
+      if (status === "error") {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: `${info.file.name} fallo al subir.`,
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
     },
     onDrop(e) {
