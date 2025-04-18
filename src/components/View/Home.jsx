@@ -1,12 +1,12 @@
 import React from "react";
 import Actions from "./Common/Actions";
-
+import Uploader from "./Common/Uploader";
 
 const Home = () => {
   return (
     <div className="p-3">
       <Actions></Actions>
-      <h1>pagina inicio</h1>
+      <Uploader></Uploader>
     </div>
   );
 };
