@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { InboxOutlined } from "@ant-design/icons";
-import { message, Upload } from "antd";
+import { InboxOutlined, DownloadOutlined } from "@ant-design/icons";
+import { Button, Input, Upload } from "antd";
 import { Row } from "react-bootstrap";
 import Swal from "sweetalert2";
 const { Dragger } = Upload;
 
 const Uploader = () => {
   const [fileList, setFileList] = useState([]);
+  const [formVisible, setFormvisible] = useState(false);
   const props = {
     name: "file",
     multiple: false,
@@ -60,7 +61,7 @@ const Uploader = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <div className="w-84 pt-30">
         <Dragger {...props}>
           <div className="mt-3">
@@ -71,6 +72,16 @@ const Uploader = () => {
             <p className="ant-upload-hint mt-4">Se utiliza una unica imagen a la vez</p>
           </div>
         </Dragger>
+      </div>
+      <div className="w-84 flex mt-5">
+        <Input placeholder="Nombre" />
+        <Input placeholder="Dia" className="w-auto" />
+        <Input placeholder="Mes" />
+      </div>
+      <div className="mt-5 ">
+        <Button type="primary" icon={<DownloadOutlined />} className="rounded-3xl">
+          Download
+        </Button>
       </div>
     </div>
   );
