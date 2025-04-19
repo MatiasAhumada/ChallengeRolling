@@ -40,7 +40,12 @@ const Uploader = () => {
       };
       reader.readAsDataURL(file);
 
-      setFileList([file]);
+      const fileWithStatus = {
+        ...file,
+        status: "done",
+        uid: file.uid || Date.now().toString(),
+      };
+      setFileList([fileWithStatus]);
       return false;
     },
 
@@ -51,18 +56,10 @@ const Uploader = () => {
     },
 
     onChange(info) {
-      console.log(info);
-      let newFileList = [...info.fileList].slice(-1);
+          let newFileList = [...info.fileList].slice(-1);
       setFileList(newFileList);
 
-      if (info.file.originFileObj) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          setPreviewImage(reader.result);
-        };
-        reader.readAsDataURL(info.file.originFileObj);
-      }
-      const { status } = info.file;
+      const { status } = fileList[0];
 
       if (status === "done") {
         Swal.fire({

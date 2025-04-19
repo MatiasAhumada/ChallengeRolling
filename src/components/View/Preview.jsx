@@ -15,8 +15,8 @@ const Preview = ({ template, uploadedImg, nombre, dia, mes }) => {
       canvasRef.current.height = bg.height;
       ctx.drawImage(bg, 0, 0);
 
-      ctx.fillStyle = "#fff"; 
-      ctx.font = "bold 35px Courier New"; 
+      ctx.fillStyle = "#fff";
+      ctx.font = "bold 35px Courier New";
       ctx.textAlign = "left";
       const code = [
         "var i = 0, age = getAge();",
@@ -30,9 +30,8 @@ const Preview = ({ template, uploadedImg, nombre, dia, mes }) => {
         "}",
       ];
 
-      
-      const startX = 300; 
-      let startY = 400; 
+      const startX = 300;
+      let startY = 400;
       const lineHeight = 55;
       code.forEach((line) => {
         ctx.fillText(line, startX, startY);
@@ -61,7 +60,8 @@ const Preview = ({ template, uploadedImg, nombre, dia, mes }) => {
     if (!canvas) return;
 
     const link = document.createElement("a");
-    link.download = "felicitacion.png";
+    link.download = `Cumple ${nombre}.png`;
+
     link.href = canvas.toDataURL("image/png");
     link.click();
   };
