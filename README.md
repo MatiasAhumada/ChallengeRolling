@@ -1,12 +1,24 @@
-# React + Vite
+# 🎉 Challenge Rolling Code Labs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este challenge fue planteado por **Rolling Code** a raíz de la problemática de no saber cómo crear una tarjeta de cumpleaños para sus integrantes, y querer hacerlo de una forma automática, visual y sencilla.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React** v18  
+- 🎨 **Ant Design** v5  
+- 💅 **TailwindCSS** v4.1  
+- 💬 **SweetAlert2** v11  
+- 🧭 **React Router DOM** v7.5
+- 📷 **html2canvas** v1.4 — Utilizado para capturar secciones del DOM como imágenes (screenshots de la tarjeta)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Objetivo
+
+El objetivo del proyecto es automatizar la generación de tarjetas de cumpleaños de forma práctica, con una experiencia visual amigable y funcionalidades que permitan personalizar cada tarjeta con un mensaje e imagen única para el/la destinatario/a.
+
+## 📸 Funcionalidades destacadas
+
+- Subida de imágenes en formato JPG o PNG con previsualización.
+- Validación amigable con alertas interactivas.
+- Visualización de la tarjeta antes de su envío.
+- Diseño responsive y moderno.
