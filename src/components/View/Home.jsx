@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import Actions from "./Common/Actions";
+import Uploader from "./Common/Uploader";
 
 const Home = () => {
-    return (
-        <div>
-            <h1>pagina inicio</h1>
-        </div>
-    );
+  return (
+    <div className="p-3">
+      <Actions></Actions>
+      <Uploader></Uploader>
+    </div>
+  );
 };
 
 export default Home;
